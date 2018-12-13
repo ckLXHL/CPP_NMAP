@@ -9,6 +9,7 @@ struct FingerMatch;
 #include <vector>
 #include "scanLists.h"
 #include "nmap.h"
+#include "log.h"
 
 using std::string;
 using std::chrono::duration;
@@ -85,7 +86,7 @@ class NmapOps
   bool override_excludeports;
   int version_intensity;
 
-  struct sockaddr_storage decoys[MAX_DECOYS];
+  //TODOs struct sockaddr_storage decoys[MAX_DECOYS];
   bool osscan_limit; /* Skip OS Scan if no open or no closed TCP ports */
   bool osscan_guess;   /* Be more aggressive in guessing OS type */
   int numdecoys;
@@ -152,7 +153,7 @@ class NmapOps
   char *portlist; /* Ports list specified by user */
   char *exclude_portlist; /* exclude-ports list specified by user */
 
-  nsock_proxychain proxy_chain;
+  // TODO nsock_proxychain proxy_chain;
 
 #ifndef NOLUA
   bool script;
